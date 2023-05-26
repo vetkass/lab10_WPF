@@ -1,0 +1,52 @@
+﻿[
+  {
+    "FirstName": "John",
+    "LastName": "Doe",
+    "MiddleName": "Smith",
+    "PhoneNumber": "1234567890",
+    "Passport": {
+      "Seria": "1234",
+      "Number": "567890"
+    }
+  },
+  {
+    "FirstName": "Jane",
+    "LastName": "Smith",
+    "MiddleName": "Doe",
+    "PhoneNumber": "9876543210",
+    "Passport": {
+      "Seria": "0008",
+      "Number": "901234"
+    }
+  },
+  {
+    "FirstName": "Alice",
+    "LastName": "Johnson",
+    "MiddleName": "Smith",
+    "PhoneNumber": "4567890123",
+    "Passport": {
+      "Seria": "2468",
+      "Number": "135790"
+    }
+  },
+  {
+    "FirstName": "Bob",
+    "LastName": "Williams",
+    "MiddleName": "Johnson",
+    "PhoneNumber": "7890123456",
+    "Passport": {
+      "Seria": "3691",
+      "Number": "246801"
+    }
+  },
+  {
+    "FirstName": "Emily",
+    "LastName": "Brown",
+    "MiddleName": "Williams",
+    "PhoneNumber": "3210987654",
+    "Passport": {
+      "Seria": "8024",
+      "Number": "678912"
+    }
+  }
+]
