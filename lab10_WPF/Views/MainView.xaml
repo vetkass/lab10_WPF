@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab10_WPF.Views"
         xmlns:th="clr-namespace:lab10_WPF.Infrastructure"
+        xmlns:materialDesing="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Consultant" MinHeight="270" Height="600" Width="360">
+        Title="Consultant" Height="600" Width="360"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Background="Transparent">
 
     <Window.Resources>
         <Style TargetType="TextBox" x:Key="DisappearingTextTextBoxStyle" >
@@ -22,7 +27,7 @@
 
                             <TextBlock Text="{Binding (th:TextBoxHelper.WelcomeText),
                                                   RelativeSource={RelativeSource AncestorType=TextBox}}"
-                                   Foreground="Gray"
+                                   Foreground="DimGray"
                                    IsHitTestVisible="False"
                                    Visibility="{Binding Text.IsEmpty, ElementName=wellComeMSG,
                                                 Converter={StaticResource BooleanToVisibilityConverter}}" />
@@ -33,26 +38,36 @@
         </Style>
     </Window.Resources>
 
-    <Grid>
-         <Grid.RowDefinitions>
-            <RowDefinition Height="10"></RowDefinition>
+    <Grid Margin="10">
+
+        <!-- to look https://www.youtube.com/watch?v=zhYB_P3yjuc -->
+
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="20"
+                              ShadowDepth="1"
+                              Opacity="0.4"/>
+        </Grid.Effect>
+
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                <GradientStop Color="Navy" Offset="0.1" />
+                <GradientStop Color="Silver" Offset="0.25" />
+                <GradientStop Color="Teal" Offset="0.75" />
+                <GradientStop Color="Silver" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
              <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="10"></RowDefinition>
          </Grid.RowDefinitions>
-         <Grid.ColumnDefinitions>
-             <ColumnDefinition Width="10"></ColumnDefinition>
-             <ColumnDefinition Width="*"></ColumnDefinition>
-             <ColumnDefinition Width="10"></ColumnDefinition>
-         </Grid.ColumnDefinitions>
-
         
-        <TextBlock Grid.Column="1" Grid.Row="2" Text="Wellcome" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Center"/>
-        <StackPanel Grid.Column="1" Grid.Row="4">
+        <TextBlock Grid.Row="1" Text="Wellcome" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Center"/>
+        <StackPanel Grid.Row="3">
             <TextBox x:Name="UserName"
                 Style="{StaticResource DisappearingTextTextBoxStyle}"
                 th:TextBoxHelper.WelcomeText="UserName"
@@ -64,7 +79,7 @@
                 th:TextBoxHelper.WelcomeText="Password"
                 Margin="20"/>
         </StackPanel>
-        <StackPanel Grid.Column="1" Grid.Row="5">
+        <StackPanel Grid.Row="4">
             <Button Margin="10" Content="Sign In" Width="85"></Button>
             <Button Margin="10" Content="Sign Up" Width="85"></Button>
         </StackPanel>
