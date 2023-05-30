@@ -10,30 +10,36 @@
         ResizeMode="NoResize"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Background="Transparent"        
-        WindowStyle="ToolWindow"
+        WindowStyle="None"
+        AllowsTransparency="true"
         >
 
-    <Border CornerRadius="10"                    
-            BorderThickness="1">
+    <Border CornerRadius="52"                    
+            BorderThickness="10">
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="Navy" Offset="0.1" />
-                <GradientStop Color="Silver" Offset="0.25" />
-                <GradientStop Color="Teal" Offset="0.75" />
-                <GradientStop Color="Silver" Offset="1.0" />
+                <GradientStop Color="Navy" Offset="0.0" />
+                <GradientStop Color="Silver" Offset="0.5" />
+                <GradientStop Color="Teal" Offset="1.0" />
             </LinearGradientBrush>
         </Border.BorderBrush>
+    <Border CornerRadius="35"                    
+            BorderThickness="20">
+        <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Navy" Offset="0.0" />
+                    <GradientStop Color="Silver" Offset="0.5" />
+                    <GradientStop Color="Teal" Offset="1.0" />
+                </LinearGradientBrush>
+        </Border.BorderBrush>
 
-        <Grid Margin="20">
-
-        <!-- to look https://www.youtube.com/watch?v=zhYB_P3yjuc -->        
+            <Grid ShowGridLines="False">                <!-- to look https://www.youtube.com/watch?v=zhYB_P3yjuc -->        
         <Grid.Background>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
-                <GradientStop Color="Navy" Offset="0.1" />
-                <GradientStop Color="Silver" Offset="0.25" />
-                <GradientStop Color="Teal" Offset="0.75" />
-                <GradientStop Color="Silver" Offset="1.0" />
-            </LinearGradientBrush>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                        <GradientStop Color="Navy" Offset="0.0" />
+                        <GradientStop Color="Silver" Offset="0.5" />
+                        <GradientStop Color="Teal" Offset="1.0" />
+                    </LinearGradientBrush>
         </Grid.Background>
 
         <Grid.RowDefinitions>
@@ -97,6 +103,7 @@
 
         
     </Grid>
-    
+
+        </Border>
     </Border>
 </Window>
