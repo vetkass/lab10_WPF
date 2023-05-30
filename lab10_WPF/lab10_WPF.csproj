@@ -10,6 +10,7 @@
 		<Folder Include="Data\" />
 		<Folder Include="Infrastructure\" />
 		<Folder Include="Model\" />
+		<Folder Include="Views\Resources\" />
 	</ItemGroup>
 
   <ItemGroup>
