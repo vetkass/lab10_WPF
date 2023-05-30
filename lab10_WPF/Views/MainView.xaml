@@ -3,12 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d"
+        
         Title="Bank" Height="600" Width="360"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        FontFamily="{DynamicResource MaterialDesignFont}"
         Background="Transparent"        
         WindowStyle="None"
         AllowsTransparency="true"
@@ -33,7 +31,7 @@
                 </LinearGradientBrush>
         </Border.BorderBrush>
 
-            <Grid ShowGridLines="False">                <!-- to look https://www.youtube.com/watch?v=zhYB_P3yjuc -->        
+         <Grid ShowGridLines="False">                <!-- to look https://www.youtube.com/watch?v=zhYB_P3yjuc -->        
         <Grid.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
                         <GradientStop Color="Navy" Offset="0.0" />
@@ -53,11 +51,9 @@
 
         <StackPanel Grid.Row="1">
             <TextBlock 
-            Style="{StaticResource MaterialDesignHeadline6TextBlock}"
             HorizontalAlignment="Center"
             Text="Enter you credentials"/>
             <TextBlock 
-            Style="{StaticResource MaterialDesignCaptionTextBlock}"
             Text="Common for Bank 'A' applications" Width="186"/>            
             
         </StackPanel>
@@ -75,14 +71,10 @@
                 Margin="20 0 20 0"
                 Foreground="#FF393838"/>
             <TextBox x:Name="UserName"
-                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                materialDesign:HintAssist.Hint="UserName"
                 Margin="20 0 20 0"/>
 
             <PasswordBox
                 x:Name="Password"
-                Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"                
-                materialDesign:HintAssist.Hint="Password"
                 Margin="20"/>
         </StackPanel>
         <StackPanel Grid.Row="4">
@@ -94,7 +86,6 @@
                        Foreground="LightGray"
                        Margin="0 0 0 0" />
                 <Button Margin="0 -5 0 0"
-                        Style="{StaticResource MaterialDesignFlatButton}"
                         ToolTip="MaterialDesignFlatButton"
                         Content="Sign Up"
                         Foreground="#FF5E127E"/>
