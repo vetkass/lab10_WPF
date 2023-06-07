@@ -6,8 +6,10 @@ using System.Windows.Data;
 
 namespace lab10_WPF.ViewModels
 {
-    public class MainViewModel:Screen
+    public class MainViewModel: Screen
     {
+        private readonly IWindowManager _windowManager;
+
         #region UserName
         /// <summary>
         /// User Name
@@ -59,6 +61,23 @@ namespace lab10_WPF.ViewModels
         }
         #endregion
 
+
+        #region Sign In Command Action
+        /// <summary>
+        /// allows to open form window
+        /// </summary>
+        public void SignIn()
+        {
+            var window = Application.Current.MainWindow as Window;
+            if (window != null)
+            {
+                window.Close();
+            }
+            ShellViewModel model = new ShellViewModel();
+            _windowManager.ShowWindowAsync(model);
+        }
+        #endregion
+
         #region Collapse Application Command Action
         /// <summary>
         /// allows to collapse the window
@@ -78,6 +97,10 @@ namespace lab10_WPF.ViewModels
 
         public MainViewModel()
         {
+        }
+        public MainViewModel(IWindowManager windowManager)
+        {
+            _windowManager = windowManager;
         }
     }
 }

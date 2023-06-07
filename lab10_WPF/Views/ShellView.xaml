@@ -4,8 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab10_WPF.Views"
-        mc:Ignorable="d"
-        Title="ShellView" Height="450" Width="800">
+        
+        Title="Bank" Height="600" Width="360"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        
+        >
     <StackPanel>
 
         <TextBlock Text="{Binding Path=Test,Mode=OneWay}"/>

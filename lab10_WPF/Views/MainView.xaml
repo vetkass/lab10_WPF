@@ -82,7 +82,10 @@
                 Margin="20"/>
             </StackPanel>
             <StackPanel Grid.Row="5">
-                <Button Margin="10" Content="Sign In" Width="85"></Button>
+                <Button Margin="10"
+                        Content="Sign In"
+                        Width="85"
+                        x:Name="SignIn"/>                
 
                 <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
