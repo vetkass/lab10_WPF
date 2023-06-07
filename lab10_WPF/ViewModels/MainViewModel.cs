@@ -1,5 +1,8 @@
 ﻿using Caliburn.Micro;
+using System;
+using System.Globalization;
 using System.Windows;
+using System.Windows.Data;
 
 namespace lab10_WPF.ViewModels
 {
@@ -35,10 +38,11 @@ namespace lab10_WPF.ViewModels
         /// <summary>
         /// allows to move the window when the style is none
         /// </summary>
-        /// <param name="parameter">the indow itself here/param>
-        public void DragMove(object parameter)
+        /// <param name="parameter">the window itself here/param>
+        public void DragMove()
         {
-            if (parameter is Window window)
+            var window = Application.Current.MainWindow as Window;
+            if (window != null)
             {
                 window.DragMove();
             }
@@ -59,24 +63,21 @@ namespace lab10_WPF.ViewModels
         /// <summary>
         /// allows to collapse the window
         /// </summary>
-        public void CollapseWindow(object parameter)
+        ///
+        public void CollapseWindow()
         {
-            if (parameter is Window window)
+            var window = Application.Current.MainWindow as Window;
+            if (window != null)
             {
-                window.WindowState=WindowState.Minimized;
+                window.WindowState = WindowState.Minimized;
             }
         }
         #endregion
 
-
-
-
         #endregion
+
         public MainViewModel()
         {
         }
-
-
-
     }
 }

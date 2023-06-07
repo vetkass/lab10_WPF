@@ -13,7 +13,7 @@
         Background="Transparent"        
         WindowStyle="None"
         AllowsTransparency="true"
-        cal:Message.Attach="[Event MouseLeftButtonDown] = [Action DragMove($source)]" Cursor="Hand"
+        cal:Message.Attach="[Event MouseLeftButtonDown] = [Action DragMove()]" Cursor="Hand"
         >
 
     <Border CornerRadius="26"                    
@@ -100,7 +100,8 @@
             <!--#region Close and Collapse buttons-->
             <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Style="{StaticResource MaterialDesignIconButton}"
-                        Foreground="#FF5E127E">
+                        Foreground="#FF5E127E"
+                        x:Name="CollapseWindow">                    
                     <materialDesign:PackIcon Kind="ArrowCollapseDown"/>
                 </Button>
 
