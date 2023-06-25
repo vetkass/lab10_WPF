@@ -1,9 +1,10 @@
 ﻿using Caliburn.Micro;
 using lab10_WPF.Model;
+using System.Linq;
 
 namespace lab10_WPF.ViewModels
 {
-    public class ShellViewModel:Screen
+    public class ShellViewModel:  BaseViewModel
     {
         #region Test Caliburn
         /// <summary>
@@ -17,7 +18,7 @@ namespace lab10_WPF.ViewModels
         }
         #endregion
 
-        private BindableCollection<PersonModel> _Persons = new BindableCollection<PersonModel>();
+        private BindableCollection<PersonModel> _Persons;
 
         public BindableCollection<PersonModel> Persons
         {
@@ -42,31 +43,15 @@ namespace lab10_WPF.ViewModels
 
         public ShellViewModel()
         {
-            _Persons.Clear();
-            _Persons.Add(new PersonModel
+            var persons = Enumerable.Range(1, 9).Select(i => new PersonModel
             {
-                FirstName = "f1",
-                LastName = "L1",
-                MiddleName = "M1",
-                PhoneNumber = "ph1",
-                Passport = new PassportModel { Seria = "0001", Number = "000001" }
-                });
-            _Persons.Add(new PersonModel
-            {
-                FirstName = "f2",
-                LastName = "L2",
-                MiddleName = "M2",
-                PhoneNumber = "ph2",
-                Passport = new PassportModel { Seria = "0001", Number = "000002" }
+                FirstName = "f"+i,
+                LastName = "L"+i,
+                MiddleName = "M"+i,
+                PhoneNumber = "ph"+i,
+                Passport = new PassportModel { Seria = "000"+i, Number = "00000"+i }
             });
-            _Persons.Add(new PersonModel
-            {
-                FirstName = "f3",
-                LastName = "L3",
-                MiddleName = "M3",
-                PhoneNumber = "ph3",
-                Passport = new PassportModel { Seria = "0001", Number = "000003" }
-            });
+            _Persons = new BindableCollection<PersonModel>(persons);            
         }
 
 
